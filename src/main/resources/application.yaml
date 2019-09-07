@@ -8,21 +8,21 @@ spring:
       charset: UTF-8
       enabled: true
   datasource:
-    url: jdbc:mysql://localhost:3306/springboot
-    username: root
-    password: root
+    url: jdbc:mysql://dockermysql:3306/springboot?useSSL=false
+    username: test
+    password: test
     driver-class-name: com.mysql.jdbc.Driver
     hikari-maximum-pool-size: 1
   jpa:
     show-sql: false
     hibernate:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
         order_by_default_null_ordering: last
 
 server:
-  port: 8081
+  port: 8082
 debug: true
